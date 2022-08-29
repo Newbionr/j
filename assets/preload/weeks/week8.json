@@ -1,0 +1,50 @@
+{
+	"storyName": "KINEMASTER",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"weekBefore": "",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"kinemaster",
+			"kinemaster",
+			[
+				255,
+				100,
+				93
+			]
+		],
+		[
+			"edition",
+			"kinemaster",
+			[
+				255,
+				100,
+				93
+			]
+		],
+		[
+			"effect",
+			"kinemaster",
+			[
+				255,
+				100,
+				93
+			]
+		]
+	],
+	"weekCharacters": [
+		"kinemaster",
+		"",
+		""
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "kinemaster"
+}
