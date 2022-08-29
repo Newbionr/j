@@ -451,7 +451,7 @@ class PlayState extends MusicBeatState
 				bg.updateHitbox();
 				add(bg);
 
-				var bg BGSprite('stages/stage_kinemaster/cenario_pattern', 1200, 950, 0.8, 0.8);
+				var bg:BGSprite = new BGSprite('stages/stage_kinemaster/cenario_pattern', 1200, 950, 0.8, 0.8);
 				bg.setGraphicSize(Std.int(bg.width * 0.8));
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				bg.updateHitbox();
