@@ -131,14 +131,6 @@ class FreeplayState extends MusicBeatState
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
 
-			{
-				musicas = musicas1;
-			}
-        else
-			{
-				musicas = musicas0;
-			}
-
 		iconesGrp = new FlxTypedSpriteGroup<FlxSprite>();
 				for (i in 0...musicas.length)
 				{
