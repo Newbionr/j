@@ -81,6 +81,12 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			['Kinemaster Team (Demo)'],
+			['Pedroysker',		'pedroysker',		'Director - Artist - Animator - Musician',		  'https://twitter.com/PEDROYSKER1',	'BFBFBF'],
+			['CaioMoon!',		'caiomoon',		    'Co-Director - Programmer - Concepts - Charter',  'https://twitter.com/CaioMoon1',	    '6E8FDB'],
+			['BruhEuller',		'bruheuller',		'Artist',					                      'https://twitter.com/BruhEuller',	    'FFFF66'],
+			['Loader',		    'loader',		    'Musician - Artist - Concepts',					  'https://twitter.com/im_Loader',	    'FBD6A7'],
+			['MinhoKUS',		'minhokus',		    'Musician - Concepts',					          'https://twitter.com/DorminhocoOfz',	'A25976'],
 			['Psych Engine Android'],
 			['Saw (M.A. Jigsaw)',	'saw',				'Main Programmer of Psych Engine Android',					'https://www.youtube.com/channel/UC2Sk7vtPzOvbVzdVTWrribQ', 	'F73838'],
 			[''],
