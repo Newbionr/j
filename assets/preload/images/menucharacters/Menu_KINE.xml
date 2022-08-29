@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Menu_KINE.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="M KINE Idle0000" x="0" y="0" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0001" x="0" y="0" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0002" x="1269" y="0" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0003" x="2538" y="0" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0004" x="0" y="723" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0005" x="1269" y="723" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0006" x="2538" y="723" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0007" x="2538" y="723" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0008" x="2538" y="723" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0009" x="2538" y="723" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0010" x="2538" y="723" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0011" x="2538" y="723" width="1269" height="723"/>
+	<SubTexture name="M KINE Idle0012" x="2538" y="723" width="1269" height="723"/>
+</TextureAtlas>
