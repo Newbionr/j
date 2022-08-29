@@ -444,7 +444,7 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
-			case 'kinemaster': //week 1
+			case 'kinemaster': //Week 2
 				var bg:BGSprite = new BGSprite('stages/stage_kinemaster/cenario_kine', 0, 0, 0.8, 0.8);
 				bg.setGraphicSize(Std.int(bg.width * 0.8));
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
@@ -457,7 +457,7 @@ class PlayState extends MusicBeatState
 				pattern.updateHitbox();
 				add(pattern);
 
-			case 'funny': //week 1
+			case 'funny': //Week 2
 				GameOverSubstate.deathSoundName = 'fnf_loss_sfx-funny';
 				GameOverSubstate.loopSoundName = 'gameOver-funny';
 				GameOverSubstate.characterName = 'bf-funny-dead';
