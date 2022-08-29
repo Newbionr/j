@@ -451,11 +451,11 @@ class PlayState extends MusicBeatState
 				bg.updateHitbox();
 				add(bg);
 
-				pattern = new BGSprite('stages/stage_kinemaster/cenario_pattern', 1200, 950, 0.8, 0.8);
-				pattern.setGraphicSize(Std.int(pattern.width * 0.8));
-				pattern.antialiasing = ClientPrefs.globalAntialiasing;
-				pattern.updateHitbox();
-				add(pattern);
+				var bg BGSprite('stages/stage_kinemaster/cenario_pattern', 1200, 950, 0.8, 0.8);
+				bg.setGraphicSize(Std.int(bg.width * 0.8));
+				bg.antialiasing = ClientPrefs.globalAntialiasing;
+				bg.updateHitbox();
+				add(bg);
 
 			case 'funny': //Week 2
 				GameOverSubstate.deathSoundName = 'fnf_loss_sfx-funny';
