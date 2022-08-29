@@ -385,6 +385,10 @@ class PlayState extends MusicBeatState
 					curStage = 'schoolEvil';
 				case 'ugh' | 'guns' | 'stress':
 					curStage = 'tank';
+				case 'kinemaster' | 'edition' | 'effect':
+					curStage = 'kinemaster';
+				case 'funny':
+					curStage = 'funny';
 				default:
 					curStage = 'stage';
 			}
@@ -440,6 +444,29 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			case 'kinemaster': //week 1
+				var bg:BGSprite = new BGSprite('stages/stage_kinemaster/cenario_kine', 0, 0, 0.8, 0.8);
+				bg.setGraphicSize(Std.int(bg.width * 0.8));
+				bg.antialiasing = ClientPrefs.globalAntialiasing;
+				bg.updateHitbox();
+				add(bg);
+
+				pattern = new BGSprite('stages/stage_kinemaster/cenario_pattern', 1200, 950, 0.8, 0.8);
+				pattern.setGraphicSize(Std.int(pattern.width * 0.8));
+				pattern.antialiasing = ClientPrefs.globalAntialiasing;
+				pattern.updateHitbox();
+				add(pattern);
+
+			case 'funny': //week 1
+				GameOverSubstate.deathSoundName = 'fnf_loss_sfx-funny';
+				GameOverSubstate.loopSoundName = 'gameOver-funny';
+				GameOverSubstate.characterName = 'bf-funny-dead';
+				
+				var bg:BGSprite = new BGSprite('stages/stage_funny/cenario_white', 0, 0, 0.8, 0.8);
+				bg.setGraphicSize(Std.int(bg.width * 1));
+				bg.updateHitbox();
+				add(bg);
+			
 			case 'stage': //Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -2687,7 +2714,7 @@ class PlayState extends MusicBeatState
 
 		super.update(elapsed);
 
-		scoreTxt.text = 'Score: ' + songScore + ' | Misses: ' + songMisses + ' | Rating: ' + ratingName;
+		scoreTxt.text = 'Score: ' + songScore + ' | Port by newbion | Misses: ' + songMisses + ' | Rating: ' + ratingName;
 		if(ratingName != '?')
 			scoreTxt.text += ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;
 
