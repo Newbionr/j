@@ -131,7 +131,6 @@ class FreeplayState extends MusicBeatState
 		grpOptions = new FlxTypedGroup<Alphabet>();
 		add(grpOptions);
 
-		if (ClientPrefs.funnyPass)
 			{
 				musicas = musicas1;
 			}
@@ -240,9 +239,9 @@ class FreeplayState extends MusicBeatState
 			trace(md);
 		 */
 
-		bg.color = getCurrentBGColor();
-		intendedColor = bg.color;
-		changeSelection();
+		var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
+		textBG.alpha = 0.6;
+		add(textBG);
 
 		#if PRELOAD_ALL
 		#if android
