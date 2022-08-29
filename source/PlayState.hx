@@ -385,6 +385,10 @@ class PlayState extends MusicBeatState
 					curStage = 'schoolEvil';
 				case 'ugh' | 'guns' | 'stress':
 					curStage = 'tank';
+				case 'kinemaster' | 'edition' | 'effect':
+					curStage = 'kinemaster';
+				case 'funny':
+					curStage = 'funny';
 				default:
 					curStage = 'stage';
 			}
@@ -440,6 +444,29 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			case 'kinemaster':
+				var bg:BGSprite = new BGSprite('stages/stage_kinemaster/cenario_kine', 0, 0, 0.8, 0.8);
+				bg.setGraphicSize(Std.int(bg.width * 0.8));
+				bg.antialiasing = ClientPrefs.globalAntialiasing;
+				bg.updateHitbox();
+				add(bg);
+
+				pattern = new BGSprite('stages/stage_kinemaster/cenario_pattern', 1200, 950, 0.8, 0.8);
+				pattern.setGraphicSize(Std.int(pattern.width * 0.8));
+				pattern.antialiasing = ClientPrefs.globalAntialiasing;
+				pattern.updateHitbox();
+				add(pattern);
+
+			case 'funny':
+				GameOverSubstate.deathSoundName = 'fnf_loss_sfx-funny';
+				GameOverSubstate.loopSoundName = 'gameOver-funny';
+				GameOverSubstate.characterName = 'bf-funny-dead';
+				
+				var bg:BGSprite = new BGSprite('stages/stage_funny/cenario_white', 0, 0, 0.8, 0.8);
+				bg.setGraphicSize(Std.int(bg.width * 1));
+				bg.updateHitbox();
+				add(bg);
+			
 			case 'stage': //Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
@@ -4577,6 +4604,145 @@ class PlayState extends MusicBeatState
 		if(curStep == lastStepHit) {
 			return;
 		}
+
+		if (curStage == 'kinemaster' && curSong == 'Kinemaster') {
+			switch (curStep) {
+				case 1:
+				    FlxTween.tween(pattern, {x: -300}, 7, {ease: FlxEase.quartOut});
+			}
+        }
+		
+		if (curStage == 'kinemaster' && curSong == 'Edition') {
+			switch (curStep) {
+				case 1:
+				    FlxTween.tween(pattern, {x: -300}, 7, {ease: FlxEase.quartOut});
+				case 760:
+					FlxG.sound.play(Paths.sound('mouse-effect'));
+				case 784:
+					FlxTween.tween(boyfriendGroup, {y: -50}, 2, {ease: FlxEase.expoIn});
+				case 800:
+					FlxTween.tween(boyfriendGroup, {y: 180}, 2, {ease: FlxEase.expoIn});
+				case 820:
+					FlxTween.tween(boyfriendGroup, {y: -50}, 2, {ease: FlxEase.expoIn});
+				case 896:
+					FlxTween.tween(boyfriendGroup, {angle: -15}, 2, {ease: FlxEase.quartIn});
+				case 928:
+					FlxTween.tween(boyfriendGroup, {x: 1050}, 2, {ease: FlxEase.expoIn});
+					FlxTween.tween(boyfriendGroup, {y: -50}, 2, {ease: FlxEase.expoIn});
+				case 1024:
+					FlxTween.tween(boyfriendGroup, {y: 180}, 2, {ease: FlxEase.expoIn});
+					FlxTween.tween(boyfriendGroup, {angle: 0}, 2, {ease: FlxEase.expoIn});
+				case 1232:
+					FlxTween.tween(boyfriendGroup, {x: 1300}, 2, {ease: FlxEase.expoIn});
+				case 1262:
+					FlxG.sound.play(Paths.sound('mouse-effect'));
+				case 1278:
+					FlxTween.tween(borda, {y: -250}, 2, {ease: FlxEase.quartOut});
+					FlxTween.tween(borda2, {y: 750}, 2, {ease: FlxEase.quartOut});
+				case 1536:
+					FlxTween.tween(borda, {y: -450}, 0.8, {ease: FlxEase.quartOut});
+					FlxTween.tween(borda2, {y: 950}, 0.8, {ease: FlxEase.quartOut});
+				case 1856:
+					FlxTween.tween(borda, {y: -350}, 0.8, {ease: FlxEase.quartOut});
+					FlxTween.tween(borda2, {y: 850}, 0.8, {ease: FlxEase.quartOut});
+				case 1920:
+					FlxTween.tween(borda, {y: -250}, 0.8, {ease: FlxEase.quartOut});
+					FlxTween.tween(borda2, {y: 750}, 0.8, {ease: FlxEase.quartOut});
+				case 1984:
+					FlxTween.tween(borda, {y: -150}, 0.8, {ease: FlxEase.quartOut});
+					FlxTween.tween(borda2, {y: 650}, 0.8, {ease: FlxEase.quartOut});
+				case 2048:
+					FlxTween.tween(borda, {y: -450}, 1.5, {ease: FlxEase.quartOut});
+					FlxTween.tween(borda2, {y: 950}, 1.5, {ease: FlxEase.quartOut});
+			}
+        }
+		
+		if (curStage == 'kinemaster' && curSong == 'Effect') {
+			switch (curStep) {
+				case 1:
+				    FlxTween.tween(pattern, {x: -300}, 7, {ease: FlxEase.quartOut});
+				case 240:
+				    defaultCamZoom = 0.7;
+					FlxG.camera.flash(FlxColor.WHITE, 0.2);
+					preto = new BGSprite('tela_preta', 0, 0, 0.7, 0.9);
+				    preto.setGraphicSize(Std.int(preto.width * 3.8));
+				    preto.updateHitbox();
+				    add(preto);
+				case 256:
+					FlxG.camera.flash(FlxColor.WHITE, 0.8);
+					FlxTween.tween(borda, {y: -250}, 1.2, {ease: FlxEase.quartOut});
+					FlxTween.tween(borda2, {y: 750}, 1.2, {ease: FlxEase.quartOut});
+					remove(preto);
+				case 640:
+					FlxG.camera.flash(FlxColor.RED, 0.8);
+					timeBar.createFilledBar(0xFF000000, 0xFFFDB3B0);
+					cores = new BGSprite('stages/stage_kinemaster/vermelho', -253, -180, 0.8, 0.8);
+				    cores.setGraphicSize(Std.int(cores.width * 1));
+				    add(cores);
+				case 656:
+				    remove(cores);
+					timeBar.createFilledBar(0xFF000000, 0xFFC7FDB1);
+					cores = new BGSprite('stages/stage_kinemaster/verde', -253, -180, 0.8, 0.8);
+				    cores.setGraphicSize(Std.int(cores.width * 1));
+				    add(cores);
+				case 672:
+				    remove(cores);
+					timeBar.createFilledBar(0xFF000000, 0xFFB3CFFE);
+					cores = new BGSprite('stages/stage_kinemaster/azul', -253, -180, 0.8, 0.8);
+				    cores.setGraphicSize(Std.int(cores.width * 1));
+				    add(cores);
+				case 688:
+				    remove(cores);
+					timeBar.createFilledBar(0xFF000000, 0xFFFCECB1);
+					cores = new BGSprite('stages/stage_kinemaster/amarelo', -253, -180, 0.8, 0.8);
+				    cores.setGraphicSize(Std.int(cores.width * 1));
+				    add(cores);
+				case 704:
+				    remove(cores);
+					timeBar.createFilledBar(0xFF000000, 0xFFFDB3B0);
+				    cores = new BGSprite('stages/stage_kinemaster/vermelho', -253, -180, 0.8, 0.8);
+				    cores.setGraphicSize(Std.int(cores.width * 1));
+				    add(cores);
+				case 720:
+				    remove(cores);
+					timeBar.createFilledBar(0xFF000000, 0xFFC7FDB1);
+					cores = new BGSprite('stages/stage_kinemaster/verde', -253, -180, 0.8, 0.8);
+				    cores.setGraphicSize(Std.int(cores.width * 1));
+				    add(cores);
+				case 736:
+				    remove(cores);
+					timeBar.createFilledBar(0xFF000000, 0xFFB3CFFE);
+					cores = new BGSprite('stages/stage_kinemaster/azul', -253, -180, 0.8, 0.8);
+				    cores.setGraphicSize(Std.int(cores.width * 1));
+				    add(cores);
+				case 752:
+				    remove(cores);
+					timeBar.createFilledBar(0xFF000000, 0xFFFCECB1);
+					cores = new BGSprite('stages/stage_kinemaster/amarelo', -253, -180, 0.8, 0.8);
+				    cores.setGraphicSize(Std.int(cores.width * 1));
+				    add(cores);
+				case 768:
+				    remove(cores);
+					timeBar.createFilledBar(0xFF000000, 0xFFFD5B5B);
+					FlxG.camera.flash(FlxColor.WHITE, 1.4);
+				case 1024:
+					FlxG.camera.flash(FlxColor.WHITE, 1.4);
+				case 1138:
+					FlxTween.tween(borda, {y: -400}, 1.2, {ease: FlxEase.expoIn});
+					FlxTween.tween(borda2, {y: 900}, 1.2, {ease: FlxEase.expoIn});
+				case 1174:
+				    FlxTween.tween(pattern, {x: -1400}, 7.8, {ease: FlxEase.expoIn});
+			}
+        }
+
+		if (curStage == 'funny' && curSong == 'funny') {
+			switch (curStep) {
+				case 2:
+				    timeBar.createFilledBar(0xFF000000, 0xFFFFFFFF);
+					FlxTween.tween(borda, {y: -250}, 1, {ease: FlxEase.quartOut});
+					FlxTween.tween(borda2, {y: 750}, 1, {ease: FlxEase.quartOut});
+			}
+        }
 
 		lastStepHit = curStep;
 		setOnLuas('curStep', curStep);
